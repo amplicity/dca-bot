@@ -16,10 +16,10 @@ This is the amount you'd like to invest when the 'HIGH' trigger is hit
 This is the amount you'd like to invest when the 'LOW' trigger is hit
 
 `HIGH_CHANGE=0.2`
-This specifies the target change from 24hr high, which is the 'HIGH' trigger
+This specifies the target change from 24hr high, which is the 'HIGH' trigger. IE 20% dip from the 24 hour high.
 
 `LOW_CHANGE=0.1`
-This specifies the target change from 24hr high, which is the 'LOW' trigger
+This specifies the target change from 24hr high, which is the 'LOW' trigger. IE 10% dip from the 24 hour high.
 
 `PRODUCTS=ETH-USD,SOL-USD,LINK-USD`
 This specifies the assets to purchase.
