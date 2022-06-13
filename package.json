@@ -1,0 +1,19 @@
+{
+  "name": "dca-bot",
+  "version": "1.2.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node -e \"require('./index.js').handler()\""
+  },
+  "author": "amplicity",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "coinbase-pro-node": "^3.0.5",
+    "dotenv": "^10.0.0",
+    "moment": "^2.29.1",
+    "twilio": "^3.67.1"
+  }
+}
