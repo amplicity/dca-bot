@@ -1,5 +1,5 @@
 # 🤖 DCA-BOT
-DCA-BOT is a serverless javascript function app that can be deployed to AWS Lambda or other serverless providers. It currently only works with coinbase pro and USD-based products. It purchases specified assets at a specified time if dip criteria is met. It does not sell assets, it only buys.
+DCA-BOT is a serverless javascript function app that can be deployed to AWS Lambda or other serverless providers to take advantage of a dollar-cost average purchasing strategy, which buys when the asset has dipped below a specified threshold from the 24 hour high. It currently only works with coinbase pro and USD-based products. It never sells assets.
 
 ## Usage
 The bot checks current prices and makes purchasing decisions everytime it is run, then it exits. If you'd like to run the bot at scheduled intervals (IE 15 minutes), you can set up a cron job in Amazon EventBridge. The bot can be run via `npm start`.
