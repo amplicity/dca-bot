@@ -1,5 +1,5 @@
 # 🤖 DCA-BOT
-DCA-BOT is a serverless javascript function app that can be deployed to AWS Lambda or other serverless providers. It currently only works with coinbase pro and USD-based products.
+DCA-BOT is a serverless javascript function app that can be deployed to AWS Lambda or other serverless providers to take advantage of a dollar-cost average purchasing strategy, which buys when the asset has dipped below a specified threshold from the 24 hour high. It currently only works with coinbase pro and USD-based products. It never sells assets.
 
 ## Usage
 The bot checks current prices and makes purchasing decisions everytime it is run, then it exits. If you'd like to run the bot at scheduled intervals (IE 15 minutes), you can set up a cron job in Amazon EventBridge. The bot can be run via `npm start`.
@@ -16,10 +16,10 @@ This is the amount you'd like to invest when the 'HIGH' trigger is hit
 This is the amount you'd like to invest when the 'LOW' trigger is hit
 
 `HIGH_CHANGE=0.2`
-This specifies the target change from 24hr high, which is the 'HIGH' trigger
+This specifies the target change from 24hr high, which is the 'HIGH' trigger. IE 20% dip from the 24 hour high.
 
 `LOW_CHANGE=0.1`
-This specifies the target change from 24hr high, which is the 'LOW' trigger
+This specifies the target change from 24hr high, which is the 'LOW' trigger. IE 10% dip from the 24 hour high.
 
 `PRODUCTS=ETH-USD,SOL-USD,LINK-USD`
 This specifies the assets to purchase.
