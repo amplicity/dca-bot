@@ -13,7 +13,7 @@ exports.handler = async () => {
 		passphrase: process.env.COINBASE_PASSPHRASE,
 		useSandbox: false
 	}
-
+	
 	const client = new CoinbasePro(auth);
 
 	const products = process.env.PRODUCTS.split(',');
@@ -29,7 +29,9 @@ exports.handler = async () => {
 				console.log(product + ' - checking 24 hr stats...');
 				let stats = await client.rest.product.getProductStats(product);
 				let changePercentage = 1 - (stats.last / stats.high);
-				console.log(product, changePercentage);
+				console.log('Last price: ', stats.last);
+				console.log('24 hr high: ', stats.high);
+				console.log('Change % from 24 hr high: ', changePercentage);
 				if (changePercentage >= process.env.LOW_CHANGE && changePercentage < process.env.HIGH_CHANGE) {
 					await purchase(product, process.env.LOW_DOLLARS, changePercentage);
 				} else if (changePercentage >= process.env.HIGH_CHANGE) {
